@@ -1,6 +1,18 @@
-public interface SuperComputadora {
+public abstract class Equipo {
+  Modo modo;
+  Estado estado = Estado.ACTIVO;
 
-  public double getConsumoBase();
+  abstract double getConsumoBase();
 
-  public double getUnidadesDeComputoBase();
+  abstract double getConsumo();
+
+  abstract double getUnidadesDeComputoBase();
+
+  abstract double getUnidadesDeComputo();
+
+  abstract double produccionEnOverclock();
+
+  public void seQuemo() {
+    estado = Estado.QUEMADO;
+  }
 }
